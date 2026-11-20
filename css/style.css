@@ -646,6 +646,7 @@ button {
         min-height: 190px;
     }
 
+
 /* =================================
    RESPONSIVE - VERSION MOBILE
 ================================= */
@@ -686,10 +687,16 @@ button {
         margin: 0;
     }
 
+    /* Couleur de l'e-mail */
     .module-info a {
         display: inline-block;
-        color: inherit;
+        color: #42e6c0 !important;
         overflow-wrap: anywhere;
+        text-decoration: none;
+    }
+
+    .module-info a:hover {
+        text-decoration: underline;
     }
 
     .module-coefficient {
