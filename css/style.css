@@ -635,19 +635,6 @@ button {
 
 
 /* =================================
-   RESPONSIVE - INFORMATIONS MODULES
-================================= */
-
-@media (max-width: 768px) {
-
-    .module-card {
-        padding-right: 20px;
-        padding-bottom: 20px;
-        min-height: 190px;
-    }
-
-
-/* =================================
    RESPONSIVE - VERSION MOBILE
 ================================= */
 
@@ -690,7 +677,7 @@ button {
     /* Couleur de l'e-mail */
     .module-info a {
         display: inline-block;
-        color: #42e6c0 !important;
+        color: var(--accent) !important;
         overflow-wrap: anywhere;
         text-decoration: none;
     }
