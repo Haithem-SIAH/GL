@@ -646,18 +646,55 @@ button {
         min-height: 190px;
     }
 
+/* =================================
+   RESPONSIVE - VERSION MOBILE
+================================= */
+
+@media screen and (max-width: 768px) {
+
+    .module-card {
+        position: relative;
+        height: auto;
+        min-height: 280px;
+        padding: 25px 20px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .module-info {
-        position: static;
-        transform: none;
-        max-width: 85%;
+        display: flex !important;
+        position: static !important;
+        transform: none !important;
+
+        width: 100%;
+        max-width: 100%;
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
         margin-top: 18px;
-        margin-left: 0;
-        gap: 9px;
+        margin-bottom: 15px;
+
         font-size: 12px;
+        color: #cbd5e1;
+    }
+
+    .module-info p {
+        margin: 0;
+    }
+
+    .module-info a {
+        display: inline-block;
+        color: inherit;
+        overflow-wrap: anywhere;
     }
 
     .module-coefficient {
-        margin-top: 10px;
+        margin-top: 12px;
+        margin-bottom: 0;
     }
 
 }
