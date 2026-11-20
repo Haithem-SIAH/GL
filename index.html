@@ -6,67 +6,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Haithem  SIAH</title>
+    <title>University Library | Haithem SIAH</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <header class="hero">
+    <!-- NAVBAR -->
+    <header class="navbar">
 
-        <div class="hero-content">
-            <span class="top-label">UNIVERSITE • Badji Mokhtar Annaba</span>
+        <div class="profile">
+            <img src="images/Haithem.jpg" alt="Photo de Haithem SIAH">
 
-            <h1>Haithem SIAH</h1>
+            <div class="profile-info">
+                <strong>Haithem SIAH</strong>
+                <span>UNIVERSITY LIBRARY</span>
+            </div>
+        </div>
 
-            <p>
-                Votre espace numérique dédié aux ressources
-                pédagogiques et universitaires.
-            </p>
-
-            <div class="hero-line"></div>
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            Espace pédagogique
         </div>
 
     </header>
 
-    <main class="container">
 
-        <section class="welcome">
-            <span class="welcome-label">ESPACE ÉTUDIANT</span>
+    <!-- HERO -->
+    <section class="hero">
 
-            <h2>Bienvenue dans votre bibliothèque</h2>
+        <div class="hero-content">
+
+            <span class="hero-label">VOTRE ESPACE UNIVERSITAIRE</span>
+
+            <h1>
+                UNIVERSITY <span>LIBRARY</span>
+            </h1>
 
             <p>
-                Accédez facilement à vos cours, travaux dirigés,
-                travaux pratiques et documents universitaires.
+                Votre espace numérique dédié aux ressources pédagogiques
+                et universitaires.
             </p>
+
+            <div class="hero-line"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN -->
+    <main class="main-container">
+
+        <!-- WELCOME -->
+        <section class="welcome-card">
+
+            <span class="section-label">BIENVENUE</span>
+
+            <h2>Votre savoir, à portée de clic.</h2>
+
+            <p>
+                Explorez vos modules et accédez facilement à vos cours,
+                TD, TP et documents universitaires.
+            </p>
+
         </section>
 
+
+        <!-- MODULES AND NAVIGATION -->
         <section class="modules-section">
 
-            <div class="section-header">
+            <div class="section-heading">
+
                 <div>
-                    <span class="section-label">ESPACE PÉDAGOGIQUE</span>
-                    <h2>Nos modules</h2>
+                    <span id="pageLabel" class="section-label">
+                        ESPACE PÉDAGOGIQUE
+                    </span>
+
+                    <h2 id="pageTitle">Mes modules</h2>
+
+                    <p id="pageDescription">
+                        Sélectionnez un module pour découvrir ses ressources.
+                    </p>
                 </div>
 
-                <span class="module-count">08 MODULES</span>
+                <button id="backButton" class="back-button" hidden>
+                    ← Retour
+                </button>
+
             </div>
 
-            <div id="modules" class="modules"></div>
+            <!-- JavaScript affiche les modules ici -->
+            <div id="content" class="content-grid"></div>
 
         </section>
 
     </main>
 
-    <footer>
-        <p>UNIVERSITY LIBRARY</p>
-        <span>Une bibliothèque numérique pour réussir ensemble.</span>
-        <small>© 2026 - Tous droits réservés</small>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>© 2026 University Library — Haithem SIAH</p>
+
+        <span>Partageons le savoir.</span>
+
     </footer>
+
 
     <script src="js/script.js"></script>
 
 </body>
+
 </html>
