@@ -575,3 +575,60 @@ button {
         font-size: 12px;
     }
 }
+
+.teacher-name {
+    margin-top: 8px;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+.teacher-email {
+    display: inline-block;
+    margin-top: 4px;
+    color: #42e6c0;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.teacher-email:hover {
+    text-decoration: underline;
+}
+
+.module-card {
+    position: relative;
+    padding-right: 45%;
+}
+
+.module-coefficient {
+    margin-top: 12px;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.module-info {
+    position: absolute;
+    left: 700px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    max-width: 40%;
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+.module-info p {
+    margin: 0;
+}
+
+.module-info a {
+    color: var(--accent);
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.module-info a:hover {
+    text-decoration: underline;
+}

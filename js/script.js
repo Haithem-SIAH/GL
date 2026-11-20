@@ -13,6 +13,9 @@ const modules = [
 
     {
         name: "Assurance qualité et tests de logiciels",
+        enseignant: "Pr.Atil Fadila",
+        email: "fadila.atil@univ-annaba.dz",
+        coefficient: 3,
         categories: {
             Cours: [
                 {
@@ -25,12 +28,36 @@ const modules = [
                 }
             ],
             TD: [],
-            TP: []
+            TP: [
+                {
+                    name: "TP 1",
+                    file: "Master 2/Assurance qualité et tests de logiciels/TP/TP 1.pdf"
+                },
+                {
+                    name: "TP 2",
+                    file: "Master 2/Assurance qualité et tests de logiciels/TP/TP 2.pdf"
+                },
+                {
+                    name: "TP 3",
+                    file: "Master 2/Assurance qualité et tests de logiciels/TP/TP 3.pdf"
+                },
+                {
+                    name: "TP 4",
+                    file: "Master 2/Assurance qualité et tests de logiciels/TP/TP 4.pdf"
+                },
+                {
+                    name: "TP 5",
+                    file: "Master 2/Assurance qualité et tests de logiciels/TP/TP 5.pdf"
+                }
+            ]
         }
     },
 
     {
         name: "DevOps et maintenance des logiciels",
+        enseignant: "Pr.Bounour Nora",
+        email: "nora.zeghida@univ-annaba.dz",
+        coefficient: 3,
         categories: {
             Cours: [
                 {
@@ -54,25 +81,58 @@ const modules = [
                     file: "Master 2/DevOps et maintenance des logiciels/Cours/Cours 5.pdf"
                 }
             ],
-            TD: [],
-            TP: []
+            TD: [
+                {
+                    name: "TD 1",
+                    file: "Master 2/DevOps et maintenance des logiciels/TD/Tut1.pdf"
+                }
+            ],
+            TP: [
+                {
+                    name: "TP 0",
+                    file: "Master 2/DevOps et maintenance des logiciels/TP/TP0.pdf"
+                },
+                {
+                    name: "TP 1",
+                    file: "Master 2/DevOps et maintenance des logiciels/TP/TP1.pdf"
+                },
+                {
+                    name: "TP 2",
+                    file: "Master 2/DevOps et maintenance des logiciels/TP/TP2.pdf"
+                },
+                {
+                    name: "TP 3",
+                    file: "Master 2/DevOps et maintenance des logiciels/TP/TP3.pdf"
+                },
+                {
+                    name: "TP 4",
+                    file: "Master 2/DevOps et maintenance des logiciels/TP/TP4.pdf"
+                },
+                {
+                    name: "TP 5",
+                    file: "Master 2/DevOps et maintenance des logiciels/TP/TP5.pdf"
+                }
+            ]
         }
     },
 
     {
         name: "Ingénierie dirigée par les modèles",
+        enseignant: "Dr.Layachi Soumia",
+        email: "soumia.layachi@univ-annaba.dz",
+        coefficient: 3,
         categories: {
             Cours: [
                 {
-                    name: "Chapitre 1",
+                    name: "Cours 1",
                     file: "Master 2/Ingénierie dirigée par les modèles/Cours/Chapitre 1.pdf"
                 },
                 {
-                    name: "Chapitre 2",
+                    name: "Cours 2",
                     file: "Master 2/Ingénierie dirigée par les modèles/Cours/Chapitre 2.pdf"
                 },
                 {
-                    name: "Chapitre 3",
+                    name: "Cours 3",
                     file: "Master 2/Ingénierie dirigée par les modèles/Cours/Chapitre 3.pdf"
                 },
                 {
@@ -80,13 +140,30 @@ const modules = [
                     file: "Master 2/Ingénierie dirigée par les modèles/Cours/STANDARD OMG FINAL.pdf"
                 }
             ],
-            TD: [],
-            TP: []
+            TD: [
+                {
+                    name: "TD 1",
+                    file: "Master 2/Ingénierie dirigée par les modèles/TD/TD1.pdf"
+                }
+            ],
+            TP: [
+                {
+                    name: "TP 1",
+                    file: "Master 2/Ingénierie dirigée par les modèles/TP/TP1.pdf"
+                },
+                {
+                    name: "TP 2",
+                    file: "Master 2/Ingénierie dirigée par les modèles/TP/TP2.pdf"
+                }
+            ]
         }
     },
 
     {
         name: "Spécification et vérification formelle",
+        enseignant: "Dr.Benouhiba Toufik",
+        email: "toufik.benouhiba@univ-annaba.dz",
+        coefficient: 3,
         categories: {
             Cours: [
                 {
@@ -98,13 +175,25 @@ const modules = [
                     file: "Master 2/Spécification et vérification formelle/Cours/chap2.pdf"
                 }
             ],
-            TD: [],
-            TP: []
+            TD: [
+                {
+                    name: "TD 1",
+                    file: "Master 2/Spécification et vérification formelle/TD/tut1.pdf"
+                },
+                {
+                    name: "TD 2",
+                    file: "Master 2/Spécification et vérification formelle/TD/tut2.pdf"
+                }
+            ],
+            TP: []    
         }
     },
 
     {
         name: "Modélisation et évaluation des performances des systèmes",
+        enseignant: "Pr.Tolba Cherif",
+        email: "cherif.tolba@univ-annaba.dz",
+        coefficient: 2,
         categories: {
             Cours: [
                 {
@@ -127,6 +216,9 @@ const modules = [
 
     {
         name: "Analyse des données massives",
+        enseignant: "Pr.Souici Labiba",
+        email: "labiba.meslati@univ-annaba.dz",
+        coefficient: 2,
         categories: {
             Cours: [
                 {
@@ -141,6 +233,9 @@ const modules = [
 
     {
         name: "Méthodologie de recherche",
+        enseignant: "Pr.Mohamed Ben Ali Yamina",
+        email: "benaliyam2@yahoo.fr",
+        coefficient: 1,
         categories: {
             Cours: [
                 {
@@ -155,6 +250,9 @@ const modules = [
 
     {
         name: "Informatique quantique",
+        enseignant: "Pr.Ghoualmi Nacira",
+        email: "nacira.ghoualmi@univ-annaba.dz",
+        coefficient: 1,
         categories: {
             Cours: [],
             TD: [],
@@ -202,6 +300,7 @@ const downloadIcon = `
 `;
 
 
+
 /* =================================
    5. AFFICHER LES MODULES
 ================================= */
@@ -224,53 +323,73 @@ function showModules() {
 
     content.innerHTML = "";
 
-
     modules.forEach((module, index) => {
 
         const card = document.createElement("div");
 
         card.className = "module-card";
 
-
+        // Numéro du module
         const number = document.createElement("span");
 
         number.className = "card-number";
 
         number.textContent =
-            `MODULE ${String(index + 1).padStart(2, "0")}`;
+            ` ${String(index + 1).padStart(2, "0")}`;
 
-
+        // Nom du module
         const title = document.createElement("h3");
 
         title.className = "card-title";
 
         title.textContent = module.name;
 
+        // Coefficient sous le titre
+        const coefficient = document.createElement("p");
 
-        const description = document.createElement("p");
+        coefficient.className = "module-coefficient";
 
-        description.className = "card-description";
+        coefficient.textContent =
+            "Coefficient : " + (module.coefficient ?? "Non renseigné");
 
-        description.textContent = "Cours • TD • TP";
 
+        // Informations de l'enseignant à droite
+        const info = document.createElement("div");
 
+        info.className = "module-info";
+
+        const teacher = document.createElement("p");
+
+        teacher.textContent = module.enseignant || "Non renseigné";
+
+        const email = document.createElement("a");
+
+        email.textContent = module.email || "E-mail non renseigné";
+
+        if (module.email) {
+            email.href = "mailto:" + module.email;
+        }
+
+        info.append(teacher, email);
+
+        // Flèche
         const arrow = document.createElement("span");
 
         arrow.className = "card-arrow";
 
         arrow.textContent = "→";
 
+        // Ajouter les éléments à la carte
+        card.append(number, title, coefficient, info, arrow);
 
-        card.append(number, title, description, arrow);
-
-
+        // Événement de clic
         card.addEventListener("click", () => {
 
             showCategories(index);
 
         });
 
-
+        // Ajouter la carte à la page
         content.appendChild(card);
 
     });
@@ -336,8 +455,7 @@ function showCategories(index) {
 
         number.className = "card-number";
 
-        number.textContent = `RESSOURCES 0${index + 1}`;
-
+        
 
         const title = document.createElement("h3");
 
