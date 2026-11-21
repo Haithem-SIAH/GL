@@ -185,7 +185,12 @@ const modules = [
                     file: "Master 2/Spécification et vérification formelle/TD/tut2.pdf"
                 }
             ],
-            TP: []    
+            TP: [
+                {
+                    name: "UPPAAL.zip",
+                    file: "Master 2/Spécification et vérification formelle/uppaal64-4.1.26-1.zip"
+                }
+            ]    
         }
     },
 
