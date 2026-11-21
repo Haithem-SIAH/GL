@@ -1,4 +1,3 @@
-
 /* =================================
    UNIVERSITY LIBRARY
    HAITHEM SIAH
@@ -125,15 +124,19 @@ const modules = [
             Cours: [
                 {
                     name: "Cours 1",
-                    file: "Master 2/Ingénierie dirigée par les modèles/Cours/Chapitre 1.pdf"
+                    file: "Master 2/Ingénierie dirigée par les modèles/Cours/Cours 1.pdf"
                 },
                 {
                     name: "Cours 2",
-                    file: "Master 2/Ingénierie dirigée par les modèles/Cours/Chapitre 2.pdf"
+                    file: "Master 2/Ingénierie dirigée par les modèles/Cours/Cours 2.pdf"
                 },
                 {
                     name: "Cours 3",
-                    file: "Master 2/Ingénierie dirigée par les modèles/Cours/Chapitre 3.pdf"
+                    file: "Master 2/Ingénierie dirigée par les modèles/Cours/Cours 3.pdf"
+                },
+                {
+                    name: "Cours 4",
+                    file: "Master 2/Ingénierie dirigée par les modèles/Cours/Cours 4.pdf"
                 },
                 {
                     name: "STANDARD OMG FINAL",
@@ -142,8 +145,12 @@ const modules = [
             ],
             TD: [
                 {
-                    name: "TD 1",
-                    file: "Master 2/Ingénierie dirigée par les modèles/TD/TD1.pdf"
+                    name: "TD+Solution",
+                    file: "Master 2/Ingénierie dirigée par les modèles/TD/TD+Solution.pdf"
+                },
+                {
+                    name: "TD'",
+                    file: "Master 2/Ingénierie dirigée par les modèles/TD/TD'.pdf"
                 }
             ],
             TP: [
@@ -178,11 +185,15 @@ const modules = [
             TD: [
                 {
                     name: "TD 1",
-                    file: "Master 2/Spécification et vérification formelle/TD/tut1.pdf"
+                    file: "Master 2/Spécification et vérification formelle/TD/TD 1.pdf"
                 },
                 {
                     name: "TD 2",
-                    file: "Master 2/Spécification et vérification formelle/TD/tut2.pdf"
+                    file: "Master 2/Spécification et vérification formelle/TD/TD 2.pdf"
+                },
+                {
+                    name: "Solution_Exo5_TD2",
+                    file: "Master 2/Spécification et vérification formelle/TD/Solution_Exo5_TD2.pdf"
                 }
             ],
             TP: [
@@ -190,7 +201,14 @@ const modules = [
                     name: "UPPAAL.zip",
                     file: "Master 2/Spécification et vérification formelle/uppaal64-4.1.26-1.zip"
                 }
-            ]    
+            ],
+            Micro: [
+                {
+                    name: "Micro-Interrogation 1",
+                    file: "Master 2/Spécification et vérification formelle/Micro/Micro.pdf"
+                }
+            ]
+
         }
     },
 
@@ -228,11 +246,29 @@ const modules = [
             Cours: [
                 {
                     name: "Programme",
-                    file: "Master 2/Analyse des données massives/Pgm Big data Analytics M2.pdf"
+                    file: "Master 2/Analyse des données massives/Cours/Programme.pdf"
+                },
+                {
+                    name: "Cours 1",
+                    file: "Master 2/Analyse des données massives/Cours/Cours 1.pdf"
+                },
+                {
+                    name: "Cours 2",
+                    file: "Master 2/Analyse des données massives/Cours/Cours 2.pdf"
                 }
             ],
-            TD: [],
-            TP: []
+            TD: [
+                {
+                    name: "Article_Survey",
+                    file: "Master 2/Analyse des données massives/TD/Article_Survey.pdf"
+                }
+            ],
+            TP: [
+                {
+                    name: "Travaux_Pratiques",
+                    file: "Master 2/Analyse des données massives/TP/Travaux_Pratiques.pdf"
+                }
+            ]
         }
     },
 
@@ -248,8 +284,12 @@ const modules = [
                     file: "Master 2/Méthodologie de recherche/Cours.pdf"
                 }
             ],
-            TD: [],
-            TP: []
+            Travail: [
+                {
+                    name: "Travail",
+                    file: "Master 2/Méthodologie de recherche/Travail.pdf"
+                }
+            ]
         }
     },
 
@@ -260,8 +300,6 @@ const modules = [
         coefficient: 1,
         categories: {
             Cours: [],
-            TD: [],
-            TP: []
         }
     }
 
@@ -303,7 +341,6 @@ const downloadIcon = `
         <path d="M5 20h14"></path>
     </svg>
 `;
-
 
 
 /* =================================
@@ -406,13 +443,21 @@ function showModules() {
    6. AFFICHER LES CATÉGORIES
 ================================= */
 
-function showCategories(index) {
+function showCategories(index, addHistory = true) {
 
     currentModule = index;
 
     currentCategory = null;
 
     const module = modules[index];
+
+    // Ajouter une entrée dans l'historique uniquement lors d'une navigation
+    if (addHistory) {
+        history.pushState({
+            page: "categories",
+            moduleIndex: index
+        }, "");
+    }
 
 
     pageLabel.textContent = "MODULE SÉLECTIONNÉ";
@@ -429,24 +474,8 @@ function showCategories(index) {
     content.innerHTML = "";
 
 
-    const categories = [
-
-        {
-            name: "Cours",
-            description: "Supports de cours et chapitres."
-        },
-
-        {
-            name: "TD",
-            description: "Travaux dirigés et exercices."
-        },
-
-        {
-            name: "TP",
-            description: "Travaux pratiques et applications."
-        }
-
-    ];
+    // Récupérer automatiquement toutes les catégories du module
+    const categories = Object.keys(module.categories);
 
 
     categories.forEach((category, index) => {
@@ -460,20 +489,12 @@ function showCategories(index) {
 
         number.className = "card-number";
 
-        
 
         const title = document.createElement("h3");
 
         title.className = "card-title";
 
-        title.textContent = category.name;
-
-
-        const description = document.createElement("p");
-
-        description.className = "card-description";
-
-        description.textContent = category.description;
+        title.textContent = category;
 
 
         const arrow = document.createElement("span");
@@ -483,12 +504,12 @@ function showCategories(index) {
         arrow.textContent = "→";
 
 
-        card.append(number, title, description, arrow);
+        card.append(number, title, arrow);
 
 
         card.addEventListener("click", () => {
 
-            showDocuments(category.name);
+            showDocuments(category);
 
         });
 
@@ -504,9 +525,18 @@ function showCategories(index) {
    7. AFFICHER LES DOCUMENTS PDF
 ================================= */
 
-function showDocuments(categoryName) {
+function showDocuments(categoryName, addHistory = true) {
 
     currentCategory = categoryName;
+
+    // Ajouter une entrée dans l'historique uniquement lors d'une navigation
+    if (addHistory) {
+        history.pushState({
+            page: "documents",
+            moduleIndex: currentModule,
+            categoryName: categoryName
+        }, "");
+    }
 
     const module = modules[currentModule];
 
@@ -594,8 +624,8 @@ function showDocuments(categoryName) {
         download.className = "download-button";
 
         download.href = encodeURI(pdf.file);
-
-        download.download = "";
+        download.target = "_blank";
+        download.rel = "noopener";
 
         download.title = "Télécharger " + pdf.name;
 
@@ -617,18 +647,35 @@ function showDocuments(categoryName) {
 
 
 /* =================================
-   8. BOUTON RETOUR
+   8. GESTION DU BOUTON RETOUR
 ================================= */
 
+// Bouton Retour du site
 backButton.addEventListener("click", () => {
 
-    if (currentCategory !== null) {
+    history.back();
 
-        showCategories(currentModule);
+});
 
-    } else {
+
+// Bouton Retour du navigateur ou du téléphone
+window.addEventListener("popstate", (event) => {
+
+    const state = event.state;
+
+    if (!state || state.page === "modules") {
 
         showModules();
+
+    } else if (state.page === "categories") {
+
+        showCategories(state.moduleIndex, false);
+
+    } else if (state.page === "documents") {
+
+        currentModule = state.moduleIndex;
+
+        showDocuments(state.categoryName, false);
 
     }
 
@@ -646,6 +693,11 @@ if (
     pageDescription &&
     backButton
 ) {
+
+    // Définir la page principale comme première étape de navigation
+    history.replaceState({
+        page: "modules"
+    }, "", location.href);
 
     showModules();
 
