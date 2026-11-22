@@ -486,10 +486,13 @@ button {
 }
 
 
+
+
+
+
 /* ==============================
    RESPONSIVE
-============================== */
-
+==========================*/
 @media (max-width: 650px) {
 
     .navbar {
@@ -619,9 +622,245 @@ button {
 }
 
 
+
+
+
+/* ==============================
+   RESPONSIVE - TABLETTE
+============================== */
+
+@media screen and (max-width: 768px) {
+
+    /* NAVBAR */
+    .navbar {
+        min-height: auto;
+        padding: 16px 4%;
+        gap: 18px;
+    }
+
+    .profile {
+        gap: 15px;
+    }
+
+    .profile img {
+        width: 85px;
+        height: 85px;
+        border-radius: 22px;
+    }
+
+    .profile-info strong {
+        font-size: 20px;
+    }
+
+    .profile-info span {
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 240px;
+        padding: 45px 15px;
+    }
+
+    .hero-label {
+        font-size: 38px;
+        letter-spacing: 2px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    /* CONTENU */
+    .main-container {
+        padding: 35px 16px 60px;
+    }
+
+    .welcome-card {
+        padding: 27px 22px;
+        margin-bottom: 45px;
+    }
+
+    .welcome-card h2 {
+        font-size: 21px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section-heading h2 {
+        font-size: 24px;
+    }
+
+    /* CARTES */
+    .module-card,
+    .category-card {
+        padding: 23px 22px;
+    }
+
+    .card-title {
+        font-size: 16px;
+        max-width: 90%;
+    }
+
+    .card-arrow {
+        right: 17px;
+    }
+
+    /* INFORMATIONS DES MODULES */
+    .module-card {
+        height: auto;
+        min-height: 280px;
+        padding: 25px 20px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .module-info {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 18px;
+        margin-bottom: 15px;
+        font-size: 12px;
+    }
+
+    .module-info p {
+        margin: 0;
+    }
+
+    .module-info a {
+        display: inline-block;
+        color: var(--accent);
+        overflow-wrap: anywhere;
+    }
+
+    .module-coefficient {
+        margin-top: 12px;
+        margin-bottom: 0;
+    }
+
+    .teacher-name {
+        font-size: 12px;
+    }
+
+    .teacher-email {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    /* PDF */
+    .pdf-item {
+        padding: 14px;
+    }
+
+    .pdf-name {
+        font-size: 12px;
+    }
+}
+
+
+/* ==============================
+   RESPONSIVE - PETITS TÉLÉPHONES
+============================== */
+
+@media screen and (max-width: 480px) {
+
+    /* NAVBAR */
+    .navbar {
+        padding: 14px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .profile-info strong {
+        font-size: 19px;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 220px;
+        padding: 40px 15px;
+    }
+
+    .hero-label {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 12px;
+    }
+
+    .hero-line {
+        margin-top: 25px;
+    }
+
+    /* CONTENU */
+    .main-container {
+        padding: 30px 14px 50px;
+    }
+
+    .welcome-card {
+        padding: 23px 18px;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
+    /* CARTES */
+    .module-card,
+    .category-card {
+        padding: 20px 16px;
+    }
+
+    .card-title {
+        font-size: 15px;
+    }
+
+    .module-info {
+        font-size: 11px;
+    }
+
+    .pdf-name {
+        font-size: 11px;
+    }
+}
+
+
+
+
+
+
 /* =================================
    RESPONSIVE - VERSION MOBILE
-================================= */
+================================= *
 
 @media screen and (max-width: 768px) {
 
@@ -659,7 +898,7 @@ button {
         margin: 0;
     }
 
-    /* Couleur de l'e-mail */
+    /* Couleur de l'e-mail *
     .module-info a {
         display: inline-block;
         color: var(--accent) !important;
@@ -676,4 +915,4 @@ button {
         margin-bottom: 0;
     }
 
-}
+} 
