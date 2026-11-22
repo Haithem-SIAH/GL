@@ -240,7 +240,7 @@ const modules = [
     {
         name: "Analyse des données massives",
         enseignant: "Pr.Souici Labiba",
-        email: "labiba.meslati@univ-annaba.dz",
+        email: "souici.labiba@gmail.com",
         coefficient: 2,
         categories: {
             Cours: [
@@ -261,6 +261,14 @@ const modules = [
                 {
                     name: "Article_Survey",
                     file: "Master 2/Analyse des données massives/TD/Article_Survey.pdf"
+                },
+                {
+                    name: "How to Read a Paper",
+                    file: "Master 2/Analyse des données massives/TD/How to Read a Paper.pdf"
+                },
+                {
+                    name: "Travail",
+                    file: "Master 2/Analyse des données massives/TD/Travail.pdf"
                 }
             ],
             TP: [
