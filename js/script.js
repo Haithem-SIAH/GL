@@ -83,7 +83,7 @@ const modules = [
             TD: [
                 {
                     name: "TD 1",
-                    file: "Master 2/DevOps et maintenance des logiciels/TD/Tut1.pdf"
+                    file: "Master 2/DevOps et maintenance des logiciels/TD/TD 1.pdf"
                 }
             ],
             TP: [
@@ -110,6 +110,10 @@ const modules = [
                 {
                     name: "TP 5",
                     file: "Master 2/DevOps et maintenance des logiciels/TP/TP5.pdf"
+                },
+                {
+                    name: "TP 5_SUITE",
+                    file: "Master 2/DevOps et maintenance des logiciels/TP/TP5_SUITE.pdf"
                 }
             ]
         }
