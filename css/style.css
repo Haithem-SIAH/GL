@@ -66,9 +66,9 @@ button {
 
 .profile-info span {
     color: #21d69b;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 
@@ -99,7 +99,7 @@ button {
 .hero-label {
     display: block;
     color: #b59aff;
-    font-size: 50px;
+    font-size: 20px;
     font-weight: 800;
     letter-spacing: 3px;
     margin-bottom: 18px;
