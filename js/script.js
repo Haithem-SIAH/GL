@@ -114,6 +114,10 @@ const modules = [
                 {
                     name: "TP 5_SUITE",
                     file: "Master 2/DevOps et maintenance des logiciels/TP/TP5_SUITE.pdf"
+                },
+                {
+                    name: "Liste_Exposé",
+                    file: "Master 2/DevOps et maintenance des logiciels/TP/Liste_Exposé.pdf"
                 }
             ]
         }
