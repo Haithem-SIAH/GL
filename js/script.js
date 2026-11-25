@@ -206,8 +206,12 @@ const modules = [
             ],
             TP: [
                 {
-                    name: "UPPAAL.zip",
+                    name: "uppaal64-4.1.26.zip (Windows)",
                     file: "Master 2/Spécification et vérification formelle/uppaal64-4.1.26-1.zip"
+                },
+                {
+                    name: "uppaal64-4.1.26.zip (Linux)",
+                    file: "Master 2/Spécification et vérification formelle/uppaal64-4.1.26-2.zip"
                 }
             ],
             Micro: [
