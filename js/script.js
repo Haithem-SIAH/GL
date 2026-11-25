@@ -183,11 +183,15 @@ const modules = [
             Cours: [
                 {
                     name: "Cours 1",
-                    file: "Master 2/Spécification et vérification formelle/Cours/chap1.pdf"
+                    file: "Master 2/Spécification et vérification formelle/Cours/Cours 1.pdf"
                 },
                 {
                     name: "Cours 2",
-                    file: "Master 2/Spécification et vérification formelle/Cours/chap2.pdf"
+                    file: "Master 2/Spécification et vérification formelle/Cours/Cours 2.pdf"
+                },
+                {
+                    name: "Cours 3",
+                    file: "Master 2/Spécification et vérification formelle/Cours/Cours 3.pdf"
                 }
             ],
             TD: [
