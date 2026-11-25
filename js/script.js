@@ -278,7 +278,7 @@ const modules = [
                     name: "How to Read a Paper",
                     file: "Master 2/Analyse des données massives/TD/How to Read a Paper.pdf"
                 },
-                {
+                                {
                     name: "Travail",
                     file: "Master 2/Analyse des données massives/TD/Travail.pdf"
                 }
@@ -372,12 +372,12 @@ function showModules() {
     currentModule = null;
     currentCategory = null;
 
-    pageLabel.textContent = "ESPACE PÉDAGOGIQUE";
+    pageLabel.textContent = uiText("page-label");
 
-    pageTitle.textContent = "Mes modules";
+    pageTitle.textContent = uiText("page-title");
 
     pageDescription.textContent =
-        "Sélectionnez un module pour découvrir ses ressources.";
+        uiText("select-module");
 
     backButton.hidden = true;
 
@@ -404,7 +404,7 @@ function showModules() {
 
         title.className = "card-title";
 
-        title.textContent = module.name;
+        title.textContent = translateModule(module.name);
 
         // Coefficient sous le titre
         const coefficient = document.createElement("p");
@@ -412,7 +412,7 @@ function showModules() {
         coefficient.className = "module-coefficient";
 
         coefficient.textContent =
-            "Coefficient : " + (module.coefficient ?? "Non renseigné");
+            uiText("coefficient") + (module.coefficient ?? uiText("not-informed"));
 
 
         // Informations de l'enseignant à droite
@@ -422,11 +422,11 @@ function showModules() {
 
         const teacher = document.createElement("p");
 
-        teacher.textContent = module.enseignant || "Non renseigné";
+        teacher.textContent = module.enseignant || uiText("not-informed");
 
         const email = document.createElement("a");
 
-        email.textContent = module.email || "E-mail non renseigné";
+        email.textContent = module.email || uiText("email-not-informed");
 
         if (module.email) {
             email.href = "mailto:" + module.email;
@@ -480,12 +480,12 @@ function showCategories(index, addHistory = true) {
     }
 
 
-    pageLabel.textContent = "MODULE SÉLECTIONNÉ";
+    pageLabel.textContent = uiText("selected-module");
 
-    pageTitle.textContent = module.name;
+    pageTitle.textContent = translateModule(module.name);
 
     pageDescription.textContent =
-        "Choisissez la catégorie de documents à consulter.";
+        uiText("choose-category");
 
     backButton.hidden = false;
 
@@ -514,7 +514,7 @@ function showCategories(index, addHistory = true) {
 
         title.className = "card-title";
 
-        title.textContent = category;
+        title.textContent = translateCategory(category);
 
 
         const arrow = document.createElement("span");
@@ -558,18 +558,19 @@ function showDocuments(categoryName, addHistory = true) {
         }, "");
     }
 
+
     const module = modules[currentModule];
 
     const documents = module.categories[categoryName];
 
 
     pageLabel.textContent =
-        `${categoryName.toUpperCase()} • ${module.name}`;
+        `${translateCategory(categoryName).toUpperCase()} • ${translateModule(module.name)}`;
 
-    pageTitle.textContent = categoryName;
+    pageTitle.textContent = translateCategory(categoryName);
 
     pageDescription.textContent =
-        "Retrouvez les documents disponibles dans cette catégorie.";
+        uiText("documents-description");
 
     backButton.hidden = false;
 
@@ -590,13 +591,13 @@ function showDocuments(categoryName, addHistory = true) {
         const title = document.createElement("strong");
 
         title.textContent =
-            "Aucun document disponible pour le moment.";
+            uiText("empty-title");
 
 
         const message = document.createElement("span");
 
         message.textContent =
-            "Les ressources de cette catégorie seront ajoutées prochainement.";
+            uiText("empty-message");
 
 
         empty.append(title, message);
@@ -647,11 +648,11 @@ function showDocuments(categoryName, addHistory = true) {
         download.target = "_blank";
         download.rel = "noopener";
 
-        download.title = "Télécharger " + pdf.name;
+        download.title = uiText("download") + " " + pdf.name;
 
         download.setAttribute(
             "aria-label",
-            "Télécharger " + pdf.name
+            uiText("download") + " " + pdf.name
         );
 
         download.innerHTML = downloadIcon;
@@ -700,6 +701,129 @@ window.addEventListener("popstate", (event) => {
     }
 
 });
+
+
+
+/* =====================================
+   SYSTÈME DE TRADUCTION (FR / EN)
+   Traduction de l'interface et des contenus affichés
+   ===================================== */
+
+let currentLanguage = localStorage.getItem("language") || "fr";
+
+const translations = {
+    fr: {
+        "university-name": "Université Badji Mokhtar - Annaba",
+        "hero-label": "INFORMATIQUE",
+        "footer-author": "Réalisé par",
+        "hero-description": "Un espace pédagogique dédié aux étudiants de Master 2 Génie Logiciel, regroupant les ressources essentielles à leur apprentissage et à leur réussite universitaire.",
+        "modules-description": "Explorez vos modules et accédez facilement à vos cours, TD, TP et documents universitaires.",
+        "welcome-label": "BIENVENUE",
+        "welcome-title": "Votre savoir, à portée de clic.",
+        "page-label": "ESPACE PÉDAGOGIQUE",
+        "page-title": "Mes modules",
+        "select-module": "Sélectionnez un module pour découvrir ses ressources.",
+        "selected-module": "MODULE SÉLECTIONNÉ",
+        "choose-category": "Choisissez la catégorie de documents à consulter.",
+        "documents-description": "Retrouvez les documents disponibles dans cette catégorie.",
+        "empty-title": "Aucun document disponible pour le moment.",
+        "empty-message": "Les ressources de cette catégorie seront ajoutées prochainement.",
+        "back": "← Retour",
+        "download": "Télécharger",
+        "coefficient": "Coefficient : ",
+        "not-informed": "Non renseigné",
+        "email-not-informed": "E-mail non renseigné"
+    },
+
+    en: {
+        "university-name": "Badji Mokhtar University - Annaba",
+        "hero-label": "COMPUTER SCIENCE",
+        "footer-author": "Created by",
+        "hero-description": "An educational space dedicated to Master 2 Software Engineering students, bringing together essential resources to support their learning and academic success.",
+        "modules-description": "Explore your modules and easily access your courses, tutorials, practical sessions and academic documents.",
+        "welcome-label": "WELCOME",
+        "welcome-title": "Knowledge, just a click away.",
+        "page-label": "LEARNING SPACE",
+        "page-title": "My Modules",
+        "select-module": "Select a module to explore its resources.",
+        "selected-module": "SELECTED MODULE",
+        "choose-category": "Choose a document category to explore.",
+        "documents-description": "Browse the documents available in this category.",
+        "empty-title": "No documents available at the moment.",
+        "empty-message": "Resources for this category will be added soon.",
+        "back": "← Back",
+        "download": "Download",
+        "coefficient": "Coefficient: ",
+        "not-informed": "Not specified",
+        "email-not-informed": "Email not provided"
+    }
+};
+
+const moduleNamesEN = {
+    "Assurance qualité et tests de logiciels": "Software Quality Assurance and Testing",
+    "DevOps et maintenance des logiciels": "DevOps and Software Maintenance",
+    "Ingénierie dirigée par les modèles": "Model-Driven Engineering",
+    "Spécification et vérification formelle": "Formal Specification and Verification",
+    "Modélisation et évaluation des performances des systèmes": "System Performance Modeling and Evaluation",
+    "Analyse des données massives": "Big Data Analytics",
+    "Méthodologie de recherche": "Research Methodology",
+    "Informatique quantique": "Quantum Computing"
+};
+
+function uiText(key) {
+    return translations[currentLanguage][key] || translations.fr[key] || key;
+}
+
+function translateModule(name) {
+    return currentLanguage === "en" ? (moduleNamesEN[name] || name) : name;
+}
+
+function translateCategory(category) {
+    if (currentLanguage !== "en") return category;
+
+    const categoryNames = {
+        "Cours": "Courses",
+        "TD": "Tut",
+        "TP": "Prt",
+        "Travail": "Assignment",
+        "Micro": "Micro"
+    };
+
+    return categoryNames[category] || category;
+}
+
+function applyStaticTranslations() {
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+        const key = element.dataset.i18n;
+        if (translations[currentLanguage][key]) {
+            element.textContent = translations[currentLanguage][key];
+        }
+    });
+
+    document.documentElement.lang = currentLanguage;
+    document.getElementById("frBtn").classList.toggle("active", currentLanguage === "fr");
+    document.getElementById("enBtn").classList.toggle("active", currentLanguage === "en");
+}
+
+function changeLanguage(lang) {
+    if (!translations[lang]) return;
+
+    currentLanguage = lang;
+    localStorage.setItem("language", lang);
+    applyStaticTranslations();
+
+    // Actualiser le contenu affiché sans modifier l'historique de navigation.
+    if (typeof currentModule === "number" && currentCategory !== null) {
+        showDocuments(currentCategory, false);
+    } else if (typeof currentModule === "number") {
+        showCategories(currentModule, false);
+    } else {
+        showModules();
+    }
+}
+
+document.getElementById("frBtn").addEventListener("click", () => changeLanguage("fr"));
+document.getElementById("enBtn").addEventListener("click", () => changeLanguage("en"));
 
 
 /* =================================

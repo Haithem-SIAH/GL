@@ -72,7 +72,6 @@ button {
 }
 
 
-
 /* ==============================
    HERO
 ============================== */
@@ -855,6 +854,164 @@ button {
 
 
 
+/* =========================================
+   NOVA - SMART LANGUAGE SWITCH
+   Compact Premium Edition
+========================================= */
 
+.language-switch {
+    position: relative;
+    display: flex;
+    align-items: center;
 
+    width: 145px;
+    height: 48px;
+    padding: 4px;
 
+    border-radius: 50px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(24, 36, 65, 0.95),
+        rgba(9, 17, 35, 0.98)
+    );
+
+    border: 1px solid rgba(120, 145, 255, 0.22);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.07);
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+/* Curseur lumineux animé */
+
+.language-switch::before {
+    content: "";
+
+    position: absolute;
+
+    width: calc(50% - 4px);
+    height: 38px;
+
+    top: 4px;
+    left: 4px;
+
+    border-radius: 40px;
+
+    background: linear-gradient(
+        120deg,
+        #7045F5,
+        #386DFF,
+        #329BFF
+    );
+
+    box-shadow:
+        0 0 12px rgba(112, 69, 245, 0.5),
+        0 0 24px rgba(50, 155, 255, 0.25);
+
+    transition:
+        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.3s ease;
+}
+
+/* Déplacement vers EN */
+
+.language-switch:has(#enBtn.active)::before {
+    transform: translateX(100%);
+}
+
+/* Boutons FR et EN */
+
+.language-switch button {
+    position: relative;
+    z-index: 2;
+
+    flex: 1;
+    height: 38px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2px;
+
+    border: none;
+    background: transparent;
+
+    color: #8492AC;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Langue active */
+
+.language-switch button.active {
+    color: #FFFFFF;
+}
+
+/* Code FR / EN */
+
+.language-switch .lang-code {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/* Nom de la langue */
+
+.language-switch .lang-name {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    opacity: 0.85;
+}
+
+/* Survol */
+
+.language-switch button:hover {
+    color: #FFFFFF;
+}
+
+/* Effet lumineux au survol */
+
+.language-switch:hover {
+    border-color: rgba(112, 69, 245, 0.55);
+
+    box-shadow:
+        0 0 18px rgba(112, 69, 245, 0.12),
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Animation légère au clic */
+
+.language-switch button:active {
+    transform: scale(0.94);
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+
+    .language-switch {
+        width: 135px;
+        height: 44px;
+    }
+
+    .language-switch::before {
+        height: 34px;
+    }
+
+    .language-switch button {
+        height: 34px;
+    }
+
+}

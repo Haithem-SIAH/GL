@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,6 +7,7 @@
     <title>ESPACE Génie Logiciel</title>
     <link rel="icon" href="images/logo.png">
     <link rel="stylesheet" href="css/style.css">
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NFMFVLSM6Q"></script>
 
@@ -22,31 +22,45 @@
 <body>
 
     <!-- NAVBAR -->
-<header class="navbar">
+    <header class="navbar">
 
-    <div class="profile">
-        <img src="images/Haithem.jpg" alt="Photo de Haithem SIAH">
+        <div class="profile">
+            <img src="images/Haithem.jpg" alt="Photo de Haithem SIAH">
 
-        <div class="profile-info">
-            <strong>Haithem SIAH</strong>
-            <span>Université Badji Mokhtar - Annaba</span>
+            <div class="profile-info">
+                <strong>Haithem SIAH</strong>
+                <span data-i18n="university-name">Université Badji Mokhtar - Annaba</span>
+            </div>
         </div>
-    </div>
-</header>
 
+        <div class="language-switch">
+
+            <button id="frBtn" class="active" type="button">
+                <span class="lang-code">FR</span>
+                <span class="lang-name">Français</span>
+            </button>
+
+            <button id="enBtn" type="button">
+                <span class="lang-code">EN</span>
+                <span class="lang-name">English</span>
+            </button>
+
+        </div>
+
+    </header>
 
     <!-- HERO -->
     <section class="hero">
 
         <div class="hero-content">
 
-            <span class="hero-label">INFORMATIQUE</span>
+            <span class="hero-label" data-i18n="hero-label">INFORMATIQUE</span>
 
             <h1>
                 ESPACE <span>Génie Logiciel</span>
             </h1>
 
-            <p>
+            <p data-i18n="hero-description">
                 Un espace pédagogique dédié aux étudiants de Master 2 Génie Logiciel, regroupant les ressources essentielles à leur apprentissage et à leur réussite universitaire.
             </p>
 
@@ -56,24 +70,22 @@
 
     </section>
 
-
     <!-- MAIN -->
     <main class="main-container">
 
         <!-- WELCOME -->
         <section class="welcome-card">
 
-            <span class="section-label">BIENVENUE</span>
+            <span class="section-label" data-i18n="welcome-label">BIENVENUE</span>
 
-            <h2>Votre savoir, à portée de clic.</h2>
+            <h2 data-i18n="welcome-title">Votre savoir, à portée de clic.</h2>
 
-            <p>
+            <p data-i18n="modules-description">
                 Explorez vos modules et accédez facilement à vos cours,
                 TD, TP et documents universitaires.
             </p>
 
         </section>
-
 
         <!-- MODULES AND NAVIGATION -->
         <section class="modules-section">
@@ -81,18 +93,18 @@
             <div class="section-heading">
 
                 <div>
-                    <span id="pageLabel" class="section-label">
-                        ESPACE PÉDAGOGIQUe
+                    <span id="pageLabel" class="section-label" data-i18n="page-label">
+                        ESPACE PÉDAGOGIQUE
                     </span>
 
-                    <h2 id="pageTitle">Mes modules</h2>
+                    <h2 id="pageTitle" data-i18n="page-title">Mes modules</h2>
 
-                    <p id="pageDescription">
+                    <p id="pageDescription" data-i18n="select-module">
                         Sélectionnez un module pour découvrir ses ressources.
                     </p>
                 </div>
 
-                <button id="backButton" class="back-button" hidden>
+                <button id="backButton" class="back-button" hidden data-i18n="back">
                     ← Retour
                 </button>
 
@@ -105,17 +117,14 @@
 
     </main>
 
-
     <!-- FOOTER -->
     <footer class="footer">
 
-        <p>© 2026 ESPACE Génie Logiciel | Réalisé par Haithem SIAH</p>
+        <p>© 2026 ESPACE Génie Logiciel | <span data-i18n="footer-author">Réalisé par</span> Haithem SIAH</p>
 
     </footer>
-
 
     <script src="js/script.js"></script>
 
 </body>
-
 </html>
