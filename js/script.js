@@ -740,7 +740,7 @@ const translations = {
     },
 
     en: {
-        "university-name": "Badji Mokhtar University - Annaba",
+        "university-name": "Badji Mokhtar - Annaba University",
         "hero-label": "COMPUTER SCIENCE",
         "footer-author": "Created by",
         "hero-description": "An educational space dedicated to Master 2 Software Engineering students, bringing together essential resources to support their learning and academic success.",
