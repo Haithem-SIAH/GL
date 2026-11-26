@@ -44,10 +44,10 @@ button {
 }
 
 .profile img {
-    width: 115px;
-    height: 115px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    border-radius: 30px;
+    border-top-left-radius: 70px;
     border: 2px solid gray;
     box-shadow: 0 0 25px #21d69b45;
 }
@@ -854,300 +854,176 @@ button {
 
 
 
-/* =========================================
-   NOVA - SMART LANGUAGE SWITCH
-   Compact Premium Edition
-========================================= */
+/* =====================================
+   3D MAGIC BUTTON
+===================================== */
 
 .language-switch {
     position: relative;
     display: flex;
     align-items: center;
-
-    width: 145px;
-    height: 48px;
+    width: 76px;
+    height: 32px;
     padding: 4px;
+    gap: 3px;
 
-    border-radius: 50px;
-
-    background: linear-gradient(
-        145deg,
-        rgba(24, 36, 65, 0.95),
-        rgba(9, 17, 35, 0.98)
-    );
-
-    border: 1px solid rgba(120, 145, 255, 0.22);
+    background: linear-gradient(145deg, #25243b, #11101e);
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 12px;
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.25),
-        inset 0 1px 1px rgba(255, 255, 255, 0.07);
+        0 5px 0 #090817,
+        0 7px 13px rgba(0,0,0,.45),
+        inset 0 2px 4px rgba(255,255,255,.15);
 
     overflow: hidden;
-
-    transition: all 0.3s ease;
 }
 
-/* Curseur lumineux animé */
+/* Reflet animé */
+
+.language-switch::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -80%;
+    width: 35%;
+    height: 200%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+
+    transform: rotate(25deg);
+    animation: magicShine 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Curseur multicolore */
 
 .language-switch::before {
     content: "";
-
     position: absolute;
-
-    width: calc(50% - 4px);
-    height: 38px;
-
+    z-index: 0;
     top: 4px;
     left: 4px;
 
-    border-radius: 40px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+
+    border-radius: 9px;
 
     background: linear-gradient(
         120deg,
-        #7045F5,
-        #386DFF,
-        #329BFF
+        #00f5d4,
+        #00a8ff,
+        #9b5cff,
+        #ff42b3,
+        #ff9f43
     );
 
-    box-shadow:
-        0 0 12px rgba(112, 69, 245, 0.5),
-        0 0 24px rgba(50, 155, 255, 0.25);
+    background-size: 300% 300%;
 
-    transition:
-        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.3s ease;
+    box-shadow:
+        0 3px 7px rgba(0,0,0,.4),
+        inset 0 1px 2px rgba(255,255,255,.65),
+        0 0 12px rgba(0,245,212,.45);
+
+    animation: magicColors 4s ease infinite;
+
+    transition: transform .4s cubic-bezier(.2,1.5,.5,1);
 }
 
 /* Déplacement vers EN */
 
 .language-switch:has(#enBtn.active)::before {
-    transform: translateX(100%);
+    transform: translateX(calc(100% + 2px));
 }
 
-/* Boutons FR et EN */
+/* Boutons FR / EN */
 
 .language-switch button {
     position: relative;
     z-index: 2;
 
     flex: 1;
-    height: 38px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 2px;
+    height: 100%;
 
     border: none;
+    border-radius: 8px;
     background: transparent;
 
-    color: #8492AC;
+    color: #a8a8c5;
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: .5px;
 
     cursor: pointer;
-
-    transition:
-        color 0.3s ease,
-        transform 0.3s ease;
+    transition: .25s ease;
 }
-
-/* Langue active */
 
 .language-switch button.active {
-    color: #FFFFFF;
+    color: white;
+    text-shadow: 0 1px 5px rgba(0,0,0,.5);
 }
-
-/* Code FR / EN */
-
-.language-switch .lang-code {
-    font-size: 13px;
-    font-weight: 900;
-    letter-spacing: 1px;
-}
-
-/* Nom de la langue */
-
-.language-switch .lang-name {
-    font-size: 8px;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    opacity: 0.85;
-}
-
-/* Survol */
-
-.language-switch button:hover {
-    color: #FFFFFF;
-}
-
-/* Effet lumineux au survol */
-
-.language-switch:hover {
-    border-color: rgba(112, 69, 245, 0.55);
-
-    box-shadow:
-        0 0 18px rgba(112, 69, 245, 0.12),
-        0 8px 25px rgba(0, 0, 0, 0.25);
-}
-
-/* Animation légère au clic */
 
 .language-switch button:active {
-    transform: scale(0.94);
+    transform: scale(.82);
 }
 
-/* Responsive */
+/* Animations */
+
+@keyframes magicColors {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes magicShine {
+    0%, 65% {
+        left: -80%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+
+/* =====================================
+   MOBILE - VERTICAL
+===================================== */
 
 @media (max-width: 650px) {
 
-    /* NAVBAR */
-    .navbar {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 6px;
-        padding: 12px;
-    }
-
-    .profile {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        min-width: 0;
-        flex: 1;
-    }
-
-    .profile img {
-        width: 55px;
-        height: 55px;
-        flex-shrink: 0;
-    }
-
-    .profile-info {
-        min-width: 0;
-    }
-
-    .profile-info strong {
-        font-size: 14px;
-    }
-
-    .profile-info span {
-        font-size: 9px;
-        line-height: 1.3;
-    }
-
-
-    /* VERTICAL ELECTRIC LANGUAGE SWITCH */
-
     .language-switch {
-        position: relative;
-
-        width: 43px;
-        height: 76px;
-        padding: 3px;
-
-        display: flex;
+        width: 30px;
+        height: 52px;
         flex-direction: column;
+        padding: 4px;
+        gap: 3px;
+        border-radius: 11px;
         flex-shrink: 0;
-
-        border-radius: 25px;
-
-        background: linear-gradient(
-            145deg,
-            #182542,
-            #080F20
-        );
-
-        border: 1px solid rgba(112, 69, 245, 0.4);
-
-        box-shadow:
-            0 4px 15px rgba(0, 0, 0, 0.3),
-            inset 0 1px 4px rgba(255, 255, 255, 0.06);
     }
-
-
-    /* CURSEUR VERTICAL */
 
     .language-switch::before {
-        content: "";
-
-        position: absolute;
-
-        width: 35px;
-        height: 34px;
-
-        top: 3px;
-        left: 3px;
-
-        border-radius: 20px;
-
-        background: linear-gradient(
-            135deg,
-            #7045F5,
-            #386DFF,
-            #329BFF
-        );
-
-        box-shadow:
-            0 0 10px rgba(112, 69, 245, 0.6),
-            0 0 18px rgba(50, 155, 255, 0.25);
-
-        transition:
-            transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        top: 4px;
+        left: 4px;
+        width: calc(100% - 8px);
+        height: calc(50% - 4px);
     }
-
-
-    /* EN SELECTED */
 
     .language-switch:has(#enBtn.active)::before {
-        transform: translateY(100%);
+        transform: translateY(calc(100% + 3px));
     }
-
-
-    /* BUTTONS */
 
     .language-switch button {
-        position: relative;
-        z-index: 2;
-
-        width: 35px;
-        height: 34px;
-        flex: 1;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        gap: 1px;
-
-        padding: 0;
-        border: none;
-        background: transparent;
-
-        color: #8492AC;
-
-        cursor: pointer;
+        width: 100%;
+        min-height: 0;
+        font-size: 8px;
     }
-
-
-    /* ACTIVE LANGUAGE */
-
-    .language-switch button.active {
-        color: #FFFFFF;
-    }
-
-    .language-switch .lang-code {
-        font-size: 11px;
-        font-weight: 900;
-        letter-spacing: 0.5px;
-    }
-
-    .language-switch .lang-name {
-        font-size: 6px;
-        font-weight: 700;
-    }
-
 }

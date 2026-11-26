@@ -713,7 +713,7 @@ window.addEventListener("popstate", (event) => {
    Traduction de l'interface et des contenus affichés
    ===================================== */
 
-let currentLanguage = localStorage.getItem("language") || "fr";
+let currentLanguage = localStorage.getItem("language") || "en";
 
 const translations = {
     fr: {
@@ -830,6 +830,8 @@ document.getElementById("frBtn").addEventListener("click", () => changeLanguage(
 document.getElementById("enBtn").addEventListener("click", () => changeLanguage("en"));
 
 
+
+
 /* =================================
    9. INITIALISATION
 ================================= */
@@ -847,6 +849,10 @@ if (
         page: "modules"
     }, "", location.href);
 
+    // Restaurer la dernière langue choisie
+    applyStaticTranslations();
+
+    // Afficher les modules dans la langue enregistrée
     showModules();
 
     console.log(
