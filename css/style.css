@@ -43,27 +43,57 @@ button {
     gap: 22px;
 }
 
+
+
+/* =====================================
+   3D ROTATING FRAME - PROFILE
+===================================== */
+
 .profile img {
     width: 100px;
     height: 100px;
+    min-width: 100px;
     object-fit: cover;
-    border-top-left-radius: 70px;
-    border: 2px solid gray;
-    box-shadow: 0 0 25px #21d69b45;
+    border-radius: 50%;
+
+    border: 2px dotted #7655ff;
+
+    box-shadow:
+        0 0 12px #7655ff,
+        0 0 25px #00f5d455;
+
+    animation: photoGlow 2s ease-in-out infinite alternate;
 }
 
-/* Image profil - Tablettes et téléphones */
-@media (max-width: 1024px) {
-    .profile img {
-        width: 75px;
-        height: 75px;
-        min-width: 75px;
-        object-fit: cover;
-        border-top-left-radius: 35px;
-        border: 2px solid gray;
-        box-shadow: 0 0 20px #21d69b45;
+/* Animation lumineuse */
+
+@keyframes photoGlow {
+    from {
+        box-shadow:
+            0 0 10px #7655ff,
+            0 0 20px #00f5d455;
+    }
+
+    to {
+        box-shadow:
+            0 0 18px #7655ff,
+            0 0 35px #00f5d4,
+            0 0 45px #7655ff88;
     }
 }
+
+/* Tablettes et téléphones */
+
+@media (max-width: 1024px) {
+    .profile img {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+    }
+}
+
+
+
 
 .profile-info {
     display: flex;
@@ -77,12 +107,6 @@ button {
     color: gainsboro;
 }
 
-.profile-info span {
-    color: #21d69b;
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-}
 
 
 /* ==============================
@@ -108,10 +132,19 @@ button {
     z-index: 1;
 }
 
-.hero-label {
+.university {
     display: block;
     color: #b59aff;
     font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.1px;
+    margin-bottom: 18px;
+}
+
+.hero-label {
+    display: block;
+    color: #b59aff;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 3px;
     margin-bottom: 18px;
@@ -1007,39 +1040,6 @@ button {
     }
 }
 
-/* =====================================
-   MOBILE - VERTICAL
-===================================== */
-
-@media (max-width: 650px) {
-
-    .language-switch {
-        width: 30px;
-        height: 52px;
-        flex-direction: column;
-        padding: 4px;
-        gap: 3px;
-        border-radius: 11px;
-        flex-shrink: 0;
-    }
-
-    .language-switch::before {
-        top: 4px;
-        left: 4px;
-        width: calc(100% - 8px);
-        height: calc(50% - 4px);
-    }
-
-    .language-switch:has(#enBtn.active)::before {
-        transform: translateY(calc(100% + 3px));
-    }
-
-    .language-switch button {
-        width: 100%;
-        min-height: 0;
-        font-size: 8px;
-    }
-}
 
 /* Position du bouton sur tous les petits appareils */
 @media (max-width: 1024px) {
