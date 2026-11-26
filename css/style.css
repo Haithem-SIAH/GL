@@ -54,9 +54,9 @@ button {
     height: 100px;
     min-width: 100px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 35px;
 
-    border: 2px dotted #7655ff;
+    border: 1.5px solid violet;
 
     box-shadow:
         0 0 12px #7655ff,
@@ -104,7 +104,7 @@ button {
 .profile-info strong {
     font-size: 25px;
     font-weight: 900;
-    color: gainsboro;
+    color: white;
 }
 
 
