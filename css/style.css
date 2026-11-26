@@ -52,6 +52,19 @@ button {
     box-shadow: 0 0 25px #21d69b45;
 }
 
+/* Image profil - Tablettes et téléphones */
+@media (max-width: 1024px) {
+    .profile img {
+        width: 75px;
+        height: 75px;
+        min-width: 75px;
+        object-fit: cover;
+        border-top-left-radius: 35px;
+        border: 2px solid gray;
+        box-shadow: 0 0 20px #21d69b45;
+    }
+}
+
 .profile-info {
     display: flex;
     flex-direction: column;
