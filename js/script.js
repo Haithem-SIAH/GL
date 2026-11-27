@@ -169,6 +169,10 @@ const modules = [
                 {
                     name: "TP 2",
                     file: "Master 2/Ingénierie dirigée par les modèles/TP/TP2.pdf"
+                },
+                {
+                    name: "Méta-Modèle Ecore (TP2)",
+                    file: "Master 2/Ingénierie dirigée par les modèles/TP/Métamodèle Ecore (TP2).pdf"
                 }
             ]
         }
