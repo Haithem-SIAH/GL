@@ -736,7 +736,9 @@ const translations = {
         "download": "Télécharger",
         "coefficient": "Coefficient : ",
         "not-informed": "Non renseigné",
-        "email-not-informed": "E-mail non renseigné"
+        "email-not-informed": "E-mail non renseigné",
+        "contactTitle": "Contacte-moi",
+        "contactDescription": "N'hésite pas à me contacter"
     },
 
     en: {
@@ -759,7 +761,9 @@ const translations = {
         "download": "Download",
         "coefficient": "Coefficient: ",
         "not-informed": "Not specified",
-        "email-not-informed": "Email not provided"
+        "email-not-informed": "Email not provided",
+        "contactTitle": "Contact Me",
+        "contactDescription": "Feel free to contact me"
     }
 };
 

@@ -492,12 +492,132 @@ button {
 }
 
 
+/* =====================================
+   CONTACT SECTION
+===================================== */
+
+.contact-section {
+    padding: 10px 20px;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #101326,
+        #17152e,
+        #101b2d
+    );
+    border-top: 1px solid #7655ff55;
+}
+
+.contact-section h2 {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.contact-section > p {
+    color: #a9b2cc;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.contact-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 230px;
+    padding: 14px 18px;
+
+    background: #ffffff08;
+    border: 1px solid #7655ff55;
+    border-radius: 14px;
+
+    text-decoration: none;
+    text-align: left;
+
+    transition: .35s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+    border-color: #00d9ff;
+    box-shadow: 0 8px 25px #00d9ff22;
+    background: #7655ff18;
+}
+
+.contact-icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.email-icon {
+    color: #00d9ff;
+    background: #00d9ff18;
+    box-shadow: 0 0 12px #00d9ff22;
+}
+
+.facebook-icon {
+    color: #8b70ff;
+    background: #7655ff22;
+    box-shadow: 0 0 12px #7655ff22;
+}
+
+.contact-info h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.contact-info span {
+    color: #aab3cc;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.contact-card:hover .contact-icon {
+    transform: rotate(8deg) scale(1.1);
+    transition: .3s ease;
+}
+
+/* Responsive */
+
+@media (max-width: 650px) {
+    .contact-section {
+        padding: 35px 15px;
+    }
+
+    .contact-items {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
 /* ==============================
    FOOTER
 ============================== */
 
 .footer {
-    padding: 30px 20px;
+    padding: 10px 20px;
     text-align: center;
     background: #0d1427;
     border-top: 1px solid #ffffff15;
