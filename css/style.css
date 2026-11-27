@@ -594,6 +594,18 @@ button {
     transition: .3s ease;
 }
 
+.contact-card:first-child .contact-info span {
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: -0.4px;
+}
+
+.contact-card:last-child .contact-info span {
+    white-space: nowrap;
+    font-size: 11px;
+    letter-spacing: -0.3px;
+}
+
 /* Responsive */
 
 @media (max-width: 650px) {
