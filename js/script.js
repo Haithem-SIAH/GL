@@ -464,7 +464,9 @@ function showModules() {
 
     });
 
+
 }
+
 
 
 /* =================================
@@ -479,14 +481,13 @@ function showCategories(index, addHistory = true) {
 
     const module = modules[index];
 
-    // Ajouter une entrée dans l'historique uniquement lors d'une navigation
+    // Ajouter une entrée dans l'historique
     if (addHistory) {
         history.pushState({
             page: "categories",
             moduleIndex: index
         }, "");
     }
-
 
     pageLabel.textContent = uiText("selected-module");
 
@@ -501,10 +502,8 @@ function showCategories(index, addHistory = true) {
 
     content.innerHTML = "";
 
-
-    // Récupérer automatiquement toutes les catégories du module
+    // Récupérer les catégories
     const categories = Object.keys(module.categories);
-
 
     categories.forEach((category, index) => {
 
@@ -512,11 +511,9 @@ function showCategories(index, addHistory = true) {
 
         card.className = "category-card";
 
-
         const number = document.createElement("span");
 
         number.className = "card-number";
-
 
         const title = document.createElement("h3");
 
@@ -524,27 +521,38 @@ function showCategories(index, addHistory = true) {
 
         title.textContent = translateCategory(category);
 
-
         const arrow = document.createElement("span");
 
         arrow.className = "card-arrow";
 
         arrow.textContent = "→";
 
-
         card.append(number, title, arrow);
 
-
         card.addEventListener("click", () => {
-
             showDocuments(category);
-
         });
-
 
         content.appendChild(card);
 
     });
+
+    // Repositionner la page sur la section des catégories
+requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+
+        const section = document.querySelector(".modules-section");
+
+        const position =
+            section.getBoundingClientRect().top + window.scrollY - 20;
+
+        window.scrollTo({
+            top: position,
+            behavior: "smooth"
+        });
+
+    });
+});
 
 }
 
