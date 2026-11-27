@@ -607,47 +607,35 @@ button {
     letter-spacing: -0.3px;
 }
 
-/* Responsive */
-
-@media (max-width: 650px) {
-    .contact-section {
-        padding: 25px 12px;
-    }
+/* Cartes décalées - Téléphones et tablettes */
+@media (max-width: 1024px) {
 
     .contact-items {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 6px;
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
     }
 
     .contact-card {
-        flex: 1;
-        min-width: 0;
-        max-width: 250px;
-        padding: 12px 5px;
-        margin: 5px;
-        gap: 8px;
+        width: 75%;
+        max-width: 280px;
+        box-sizing: border-box;
+        flex: none;
     }
 
-    .contact-icon {
-        width: 34px;
-        height: 34px;
-        font-size: 16px;
-        flex-shrink: 0;
+    /* Première carte à gauche */
+    .contact-card:first-child {
+        align-self: flex-start;
+        margin-left: 0;
     }
 
-    .contact-info h3 {
-        font-size: 12px;
-    }
-
-    .contact-info span {
-        font-size: 10px;
-        overflow-wrap: anywhere;
+    /* Deuxième carte à droite */
+    .contact-card:last-child {
+        align-self: flex-end;
+        margin-right: 0;
     }
 }
-
 /* ==============================
    FOOTER
 ============================== */
