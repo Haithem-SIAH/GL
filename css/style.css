@@ -535,7 +535,8 @@ button {
     align-items: center;
     gap: 13px;
     min-width: 230px;
-    padding: 14px 18px;
+    padding: 14px 7px;
+    margin: 10px;
 
     background: #ffffff08;
     border: 1px solid #7655ff55;
@@ -596,13 +597,13 @@ button {
 
 .contact-card:first-child .contact-info span {
     white-space: nowrap;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: -0.4px;
 }
 
 .contact-card:last-child .contact-info span {
     white-space: nowrap;
-    font-size: 11px;
+    font-size: 13px;
     letter-spacing: -0.3px;
 }
 
@@ -625,7 +626,8 @@ button {
         flex: 1;
         min-width: 0;
         max-width: 250px;
-        padding: 12px 9px;
+        padding: 12px 5px;
+        margin: 5px;
         gap: 8px;
     }
 
