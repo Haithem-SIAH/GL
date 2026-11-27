@@ -598,27 +598,30 @@ button {
 
 @media (max-width: 650px) {
     .contact-section {
-        padding: 25px 10px;
+        padding: 25px 12px;
     }
 
     .contact-items {
+        display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 10px;
+        align-items: center;
+        gap: 6px;
     }
 
     .contact-card {
         flex: 1;
         min-width: 0;
-        max-width: 180px;
-        padding: 10px 8px;
-        gap: 7px;
+        max-width: 250px;
+        padding: 12px 9px;
+        gap: 8px;
     }
 
     .contact-icon {
-        width: 32px;
-        height: 32px;
+        width: 34px;
+        height: 34px;
         font-size: 16px;
+        flex-shrink: 0;
     }
 
     .contact-info h3 {
@@ -627,6 +630,7 @@ button {
 
     .contact-info span {
         font-size: 10px;
+        overflow-wrap: anywhere;
     }
 }
 
